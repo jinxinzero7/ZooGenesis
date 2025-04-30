@@ -1,0 +1,14 @@
+E:\.net\ZooGenesis\ZooGenesis\bin\Debug\net9.0\ZooGenesis.exe
+E:\.net\ZooGenesis\ZooGenesis\bin\Debug\net9.0\ZooGenesis.deps.json
+E:\.net\ZooGenesis\ZooGenesis\bin\Debug\net9.0\ZooGenesis.runtimeconfig.json
+E:\.net\ZooGenesis\ZooGenesis\bin\Debug\net9.0\ZooGenesis.dll
+E:\.net\ZooGenesis\ZooGenesis\bin\Debug\net9.0\ZooGenesis.pdb
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.GeneratedMSBuildEditorConfig.editorconfig
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.AssemblyInfoInputs.cache
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.AssemblyInfo.cs
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.csproj.CoreCompileInputs.cache
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.dll
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\refint\ZooGenesis.dll
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.pdb
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ZooGenesis.genruntimeconfig.cache
+E:\.net\ZooGenesis\ZooGenesis\obj\Debug\net9.0\ref\ZooGenesis.dll
