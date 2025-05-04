@@ -12,7 +12,7 @@ namespace ZooGenesis
         Женский,
         Неизвестно
     }
-    abstract public class Animal
+    abstract public class Animal : IMutable
     {
         private string _name;
         private int _age;
@@ -20,6 +20,12 @@ namespace ZooGenesis
         private List<char> _genes;
         private bool _isAlive;
         private Gender _gender;
+
+        private static readonly Dictionary<char, string> GeneSymbols = new Dictionary<char, string>()
+        {
+            {'a', "▲"},
+            {'b', "■"},
+        };
 
         public string Name
         {
@@ -38,7 +44,7 @@ namespace ZooGenesis
                 }
                 else
                 {
-                    Console.WriteLine("Возраст не может быть отрицательным.  Возраст не изменен.");
+                    Console.WriteLine("Возраст не может быть отрицательным. Возраст не изменен.");
                 }
             }
         }
@@ -64,18 +70,18 @@ namespace ZooGenesis
         }
         public Gender Gender { get; set; }
 
-        public Animal(string name, int age, double health, Gender gender, List<char> genes = null)
+        public Animal(string name, int age, double health, Gender gender, List<char> genes)
         {
             _name = name;
             Age = age;
             Health = health;
-            _genes = genes ?? new List<char>();
+            _genes = genes; ;
             _isAlive = _health > 0;
             _gender = gender;
         }
 
         // метод для восполнения здоровья
-        public virtual void Eat()
+        public void Eat()
         {
             if (IsAlive)
             {
@@ -91,7 +97,7 @@ namespace ZooGenesis
 
         public virtual void MakeSound()
         {
-            if(IsAlive)
+            if (IsAlive)
             {
                 Console.WriteLine("Sound");
             }
@@ -102,13 +108,14 @@ namespace ZooGenesis
 
         }
 
-        // рандомное число для болезни
-        Random rand = new Random();
+
 
         public void GetSick()
         {
             if (IsAlive)
             {
+                // рандомное число для болезни
+                Random rand = new Random();
                 // рандомное число олицетворяет тяжесть болезни, домножение на 5 в связи с количеством хп
                 Health -= rand.Next(10) * 5;
                 Console.WriteLine($"{Name} заболело! Здоровье уменьшилось до {Health}");
@@ -119,9 +126,40 @@ namespace ZooGenesis
             }
         }
 
+        public void Mutate(double mutationRate) // mutationRate - вероятность мутации для каждого гена
+        {
+            if (IsAlive)
+            {
+                Random random = new Random();
+                for (int i = 0; i < Genes.Count; i++)
+                {
+                    if (random.NextDouble() < mutationRate) // Случайное число от 0.0 до 1.0
+                    {
+                        // Мутируем ген
+                        char newGene;
+                        do
+                        {
+                            newGene = (char)('a' + random.Next(GeneSymbols.Count)); // Выбираем случайный символ от 'a' до 'a' + размер словаря
+                        } while (newGene == Genes[i]); // Убеждаемся, что новый ген отличается от старого
+                        Genes[i] = newGene;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Животное умерло и не может мутировать.");
+            }
+
+        }
+
+        public string GetGenesAsSymbols()
+        {
+            return string.Join(" ", Genes.Select(gene => GeneSymbols.GetValueOrDefault(gene, "?")));
+        }
+
         public override string ToString()
         {
-            return $"Имя: {Name}, Возраст: {Age}, Здоровье: {Health}%, Пол: {Gender}";
+            return $"Имя: {Name}, Возраст: {Age}, Здоровье: {Health}%, Пол: {Gender}, Гены: {GetGenesAsSymbols()}";
         }
 
     }

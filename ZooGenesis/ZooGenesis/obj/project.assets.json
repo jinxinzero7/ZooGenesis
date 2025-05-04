@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.net\\ZooGenesis\\ZooGenesis\\ZooGenesis.csproj",
+      "projectUniqueName": "D:\\.NET\\projects\\ZooGenesis\\ZooGenesis\\ZooGenesis\\ZooGenesis\\ZooGenesis.csproj",
       "projectName": "ZooGenesis",
-      "projectPath": "E:\\.net\\ZooGenesis\\ZooGenesis\\ZooGenesis.csproj",
+      "projectPath": "D:\\.NET\\projects\\ZooGenesis\\ZooGenesis\\ZooGenesis\\ZooGenesis\\ZooGenesis.csproj",
       "packagesPath": "C:\\Users\\Zorg\\.nuget\\packages\\",
-      "outputPath": "E:\\.net\\ZooGenesis\\ZooGenesis\\obj\\",
+      "outputPath": "D:\\.NET\\projects\\ZooGenesis\\ZooGenesis\\ZooGenesis\\ZooGenesis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

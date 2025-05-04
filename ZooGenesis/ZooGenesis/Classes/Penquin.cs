@@ -21,6 +21,7 @@ namespace ZooGenesis
             : base(name, age, health, gender, genes)
         {
             Size = size;
+            Console.WriteLine($"Создан пингвин: {name}");
         }
 
         public override void MakeSound()

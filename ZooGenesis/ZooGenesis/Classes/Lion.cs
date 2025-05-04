@@ -8,7 +8,7 @@ namespace ZooGenesis
 {
     public enum ManeLength
     {
-        Короткая,
+        Маленькая,
         Средняя,
         Большая,
         Великолепная
@@ -26,6 +26,7 @@ namespace ZooGenesis
             : base(name, age, health, gender, genes)
         {
             ManeSize = maneSize;
+            Console.WriteLine($"Создан лев: {name}");
         }
 
         public override void MakeSound()
